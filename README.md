@@ -1,28 +1,27 @@
 
+# LinuxDriverWizard 
 
-# LinuxDriverWizard
+## Description
 
-LinuxDriverWizard is a versatile tool for managing, installing, setting up, and updating various types of drivers on your Linux system. With LinuxDriverWizard, you can simplify the driver management process and ensure your hardware components work seamlessly with your Linux distribution.
+The LinuxDriverWizard project is designed to simplify the process of managing, installing, configuring, and updating various types of drivers on Linux systems. This README provides essential information for users and developers, helping them understand the project's purpose and functionality.
 
-## Getting Started
+## Requirements
 
-To use LinuxDriverWizard, follow these steps:
+### Project Description:
 
-### Prerequisites
+LinuxDriverWizard streamlines driver management on Linux, making it easier to install, configure, and update drivers for a variety of hardware components.
 
-Before using LinuxDriverWizard, ensure you have the following prerequisites:
+### Installation Guide:
 
-- A Linux distribution (e.g., Ubuntu, Fedora, Arch Linux).
-
-### Installation Steps
+Follow the steps below to install LinuxDriverWizard on your Linux system:
 
 1. Clone this repository to your local machine:
 
    ```bash
-  https://github.com/teamcoreQ/LinuxDriverWizard.git
+   git clone https://github.com/yourusername/LinuxDriverWizard.git
    ```
 
-2. Change the directory to the LinuxDriverWizard folder:
+2. Change to the LinuxDriverWizard directory:
 
    ```bash
    cd LinuxDriverWizard
@@ -40,51 +39,29 @@ Before using LinuxDriverWizard, ensure you have the following prerequisites:
    ./linux_driver_wizard.sh
    ```
 
-## Supported Driver Types
+### Usage Instructions:
 
-LinuxDriverWizard supports a variety of driver types, including but not limited to:
+LinuxDriverWizard simplifies driver management tasks. You can use it to:
 
-- Graphics drivers (e.g., NVIDIA, AMD, Intel).
-- Wi-Fi and network drivers.
-- Sound card drivers.
-- Printer and scanner drivers.
-- USB device drivers.
-- Touchpad and keyboard drivers.
-- and more...
+- Scan for available drivers.
+- Install drivers for various hardware components.
+- Resolve driver-related issues.
 
-If you encounter issues with a specific driver type or need additional assistance, please refer to the Troubleshooting section or reach out to our support team.
+### Configuration:
 
-## Updating Drivers
+LinuxDriverWizard provides customization options. Refer to the tool's documentation for details on modifying configuration settings.
 
-Keeping your drivers up to date is essential for optimal performance and compatibility. To update drivers using LinuxDriverWizard:
+### Contributing Guidelines:
 
-1. Launch LinuxDriverWizard.
+Developers interested in contributing to the project should adhere to the following guidelines:
 
-2. Select the "Update Drivers" option from the main menu.
-
-3. Follow the on-screen instructions to check for updates and install them.
-
-## Troubleshooting
-
-If you encounter issues or have questions about LinuxDriverWizard, consider the following:
-
-- Check the documentation provided within the repository for specific driver setup instructions.
-
-- Review the issues tab on the GitHub repository for known problems and solutions.
-
-- If you can't find a solution, don't hesitate to open a new issue on the repository, providing as much detail as possible about the problem you're experiencing.
-
-## Contributing
-
-We welcome contributions to the LinuxDriverWizard project. Whether you want to fix a bug, add a new driver type, or improve the user interface, please see our [Contributing Guidelines](CONTRIBUTING.md) for more information on how to get involved.
-
-## License
-
-LinuxDriverWizard is open-source software distributed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it in accordance with the terms of the license.
+- Follow coding standards.
+- Use appropriate pull request procedures.
+- Report issues following the provided guidelines.
+- Use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/?fbclid=IwAR0Hw-zxq3oczs2rXbdFunm_PWp40eur4QluXT8Ohbe5v-bvp7hjRy_akTc) commit convention for clear and consistent commit messages.
 
 ---
 
 **Disclaimer:** LinuxDriverWizard is a community-driven project and does not guarantee the compatibility or functionality of every driver on every Linux distribution. Always back up your system before making driver changes and proceed with caution.
 ```
 
-This README template provides instructions for making a shell script (`*.sh`) executable and running it directly.
