@@ -1,7 +1,7 @@
 
 
 ```markdown
-# LinuxDriverWizard
+#LinuxDriverWizard
 
 LinuxDriverWizard is a versatile tool for managing, installing, setting up, and updating various types of drivers on your Linux system. With LinuxDriverWizard, you can simplify the driver management process and ensure your hardware components work seamlessly with your Linux distribution.
 
