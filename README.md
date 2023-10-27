@@ -18,7 +18,7 @@ Follow the steps below to install LinuxDriverWizard on your Linux system:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/LinuxDriverWizard.git
+   https://github.com/teamcoreQ/LinuxDriverWizard.git
    ```
 
 2. Change to the LinuxDriverWizard directory:
