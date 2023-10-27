@@ -60,8 +60,7 @@ Developers interested in contributing to the project should adhere to the follow
 - Report issues following the provided guidelines.
 - Use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/?fbclid=IwAR0Hw-zxq3oczs2rXbdFunm_PWp40eur4QluXT8Ohbe5v-bvp7hjRy_akTc) commit convention for clear and consistent commit messages.
 
----
 
 **Disclaimer:** LinuxDriverWizard is a community-driven project and does not guarantee the compatibility or functionality of every driver on every Linux distribution. Always back up your system before making driver changes and proceed with caution.
-```
+
 
