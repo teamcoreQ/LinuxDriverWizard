@@ -1,0 +1,59 @@
+name: Pull Request Verification
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - review_requested
+      - review_request_removed
+
+jobs:
+  verify-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install git
+        run: sudo apt-get -y install git
+
+      - name: Verify Conventional Commits
+        id: conventional-commits
+        run: |
+          commit_messages=$(git log --format='%B' ${{ github.event.before }}..${{ github.sha }} | grep -E '^(fix|feat|chore|docs|style|refactor|perf|test)(\(.+\))?: .+')
+          if [ -z "$commit_messages" ]; then
+            echo "Error: No valid conventional commits found."
+            exit 1
+          fi
+      
+      - name: Verify Commits
+        id: verify-commits
+        if: steps.conventional-commits.outcome == 'success'
+        run: |
+          git log --format='%b' ${{ github.event.before }}..${{ github.sha }} | grep -E '^(fix|feat|chore|docs|style|refactor|perf|test)(\(.+\))?: .+' || exit 1
+      
+      - name: Check File Changes
+        id: check-file-changes
+        if: steps.verify-commits.outcome == 'success'
+        run: |
+          changed_files=$(git diff --name-only ${{ github.base_ref }} ${{ github.head_ref }} | grep -E '\.(js|jsx|ts|tsx|html|css|scss|json)$')
+          if [[ -z "$changed_files" ]]; then
+            echo "Error: Only trivial file changes (whitespace, grammar) detected."
+            exit 1
+          fi
+      
+      - name: Add Verified Label
+        if: steps.check-file-changes.outcome == 'success'
+        run: |
+          echo "All criteria passed. Labeling the pull request as 'verified'."
+          echo "::set-output name=label::verified"
+          gh pr edit https://github.com/${{ github.repository }}/pull/${{ github.event.number }} --add-label verified
+      
+      - name: Add Invalid Label and Close Pull Request
+        if: steps.check-file-changes.outcome != 'success'
+        run: |
+          echo "One or more criteria failed. Labeling the pull request as 'invalid' and closing it."
+          echo "::set-output name=label::invalid"
+          gh pr edit https://github.com/${{ github.repository }}/pull/${{ github.event.number }} --add-label invalid --close
+      
