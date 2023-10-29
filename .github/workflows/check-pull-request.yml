@@ -44,13 +44,23 @@ jobs:
           fi
       
       - name: Add Verified Label
+        id: add-verified-label
         if: steps.check-file-changes.outcome == 'success'
         run: |
-          echo "All criteria passed. Labeling the pull request as 'verified'."
+          echo "Labeling the pull request as 'verified'."
           echo "::set-output name=label::verified"
           gh pr edit https://github.com/${{ github.repository }}/pull/${{ github.event.number }} --add-label verified
       
+      - name: Add Hacktoberfest-Accepted Label
+        id: add-hacktoberfest-accepted-label
+        if: steps.add-verified-label.outcome == 'success'
+        run: |
+          echo "All criteria passed. Labeling the pull request as 'hacktoberfest-accepted'."
+          echo "::set-output name=label::hacktoberfest-accepted"
+          gh pr edit https://github.com/${{ github.repository }}/pull/${{ github.event.number }} --add-label hacktoberfest-accepted
+
       - name: Add Invalid Label and Close Pull Request
+        id: add-invalid-label
         if: steps.check-file-changes.outcome != 'success'
         run: |
           echo "One or more criteria failed. Labeling the pull request as 'invalid' and closing it."
