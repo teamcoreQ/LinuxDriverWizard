@@ -63,4 +63,10 @@ Developers interested in contributing to the project should adhere to the follow
 
 **Disclaimer:** LinuxDriverWizard is a community-driven project and does not guarantee the compatibility or functionality of every driver on every Linux distribution. Always back up your system before making driver changes and proceed with caution.
 
+## Contact
+
+If you have questions, suggestions, or encounter issues with LinuxDriverWizard, feel free to get in touch with us:
+
+- **Email:** mail.coreq@gmail.com
+- **GitHub Issues:** [Report an issue](https://github.com/teamcoreQ/LinuxDriverWizard/issues)
 
